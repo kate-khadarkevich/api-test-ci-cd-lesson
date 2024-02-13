@@ -12,6 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "30173d26-4f52-4d3b-9df0-8db67a9a0497",
 						"exec": [
 							"pm.test(\"Status code is 201\", function () {",
 							"    pm.response.to.have.status(201);",
@@ -21,8 +22,7 @@
 							"    pm.expect(pm.response.text()).to.include(\"Created\");",
 							"});"
 						],
-						"type": "text/javascript",
-						"id": "30173d26-4f52-4d3b-9df0-8db67a9a0497"
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -43,14 +43,9 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/register",
-					"protocol": "http",
+					"raw": "{{baseUrl}}register",
 					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"register"
+						"{{baseUrl}}register"
 					]
 				}
 			},
@@ -62,6 +57,7 @@
 				{
 					"listen": "test",
 					"script": {
+						"id": "3958be8c-0eb0-4819-9fe8-080f25fa1820",
 						"exec": [
 							"pm.test(\"Status code is 409\", function () {",
 							"    pm.response.to.have.status(409);",
@@ -71,8 +67,7 @@
 							"    pm.expect(pm.response.text()).to.include(\"Username already exists.\");",
 							"});"
 						],
-						"type": "text/javascript",
-						"id": "3958be8c-0eb0-4819-9fe8-080f25fa1820"
+						"type": "text/javascript"
 					}
 				}
 			],
@@ -93,14 +88,9 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3000/register",
-					"protocol": "http",
+					"raw": "{{baseUrl}}register",
 					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"register"
+						"{{baseUrl}}register"
 					]
 				}
 			},
