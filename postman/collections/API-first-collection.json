@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "ec176ca4-c077-41cb-9457-28e18423cc45",
+		"name": "API-first-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "32227865-ec176ca4-c077-41cb-9457-28e18423cc45"
+	},
+	"item": [
+		{
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Body matches string \\\"Created\\\"\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Created\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "30173d26-4f52-4d3b-9df0-8db67a9a0497"
+					}
+				}
+			],
+			"id": "83e0510b-c462-4374-9ef6-79f18560c0b3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test321\",\"password\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create an existing user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 409\", function () {",
+							"    pm.response.to.have.status(409);",
+							"});",
+							"",
+							"pm.test(\"Body matches 'Username already exists.'\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Username already exists.\");",
+							"});"
+						],
+						"type": "text/javascript",
+						"id": "3958be8c-0eb0-4819-9fe8-080f25fa1820"
+					}
+				}
+			],
+			"id": "a6fffcfd-325c-4e08-8710-0f2e79118d86",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"test321\",\"password\":\"test\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
